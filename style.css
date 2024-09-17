@@ -200,14 +200,32 @@ body {
     margin-bottom: 35px; /* Space after this paragraph */
 }
 
+/* Typewriter effect */
+@keyframes type {
+    from { width: 0; }
+    to { width: 150px; } /* Adjust to fit the width of the text */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #2E2E2E; }
+}
+
+.typewriter {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #2E2E2E; /* Cursor effect */
+    animation: type 0.8s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+
 
 #about-me .about-me-image {
     flex: 1; /* Allow image container to take available space */
     display: flex;
     justify-content: center; /* Center image horizontally within its container */
     /*border: 1px solid blue; /* Debugging border */
-
-
 }
 
 
@@ -325,49 +343,78 @@ body {
 
 
 
-
-.extras{
+.extras {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    border-color: 2px #000000 solid;
-    height: auto;
-    width: 1800px;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 20px; /* Space between the images */
+    justify-content: center; /* Center the images */
+    margin-top: 150px;
+    max-width: 1800px; /* Limit the maximum width of the gallery */
+    margin: 0 auto; /* Center the gallery horizontally */
     margin-top: 150px;
 }
 
-.image-container{
-    flex: 1 1 calc(25% - 10px); 
+.image-container {
+    position: relative;
+    flex: 1 1 calc(25% - 20px); /* 4 images per row with space between */
     box-sizing: border-box;
+    border: 5px solid #fff; /* White border for Polaroid effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    border-radius: 10px; /* Optional: rounded corners */
+    padding: 10px; /* Space around the image */
+    overflow: hidden; /* Ensure image stays within the container */
+}
+
+.image-container img {
+    width: 100%; /* Ensures image takes up full width of its container */
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Rounded corners inside the Polaroid */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    opacity: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.overlay .description {
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+.image-container:hover img {
+    opacity: 0.6; /* Darken image on hover */
+}
+
+.image-container:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
 }
 
 
-img {
-    width: 100%;  /* Ensures image takes up full width of its container */
-    height: auto;
-    display: block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
-    padding: 23px; /* Padding inside the project card */
-    border-radius: 15px;
-    /*B3C8CF8*/
-  }
-
-  footer {
+footer {
     margin-top: 100px;
     padding: 30px 0 20px;
     font-size: 15px;
     line-height: 10px;
     opacity: 0.8;
-  }
+}
   
-  .social-icons {
+.social-icons {
     text-align: center;
-  }
+}
   
-  footer .social-icons a {
+footer .social-icons a {
     display: inline-block; /* Ensure icons are inline-block */
     width: 40px;
     height: 40px;
@@ -377,7 +424,7 @@ img {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit color from parent */
     font-size: 24px; /* Adjust size if needed */
-  }
+}
   
   footer .social-icons a:hover {
     background-color: #ddd; /* Light background on hover */

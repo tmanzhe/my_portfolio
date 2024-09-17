@@ -10,7 +10,7 @@ let intervalID;
 // Function to change the greeting message
 function changeGreeting() {
     const helloElement = document.querySelector("#hello h1");
-    const fadeDuration = 75;
+    const fadeDuration = 750; // Duration in milliseconds
 
     helloElement.classList.add('fade-out');
     setTimeout(() => {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const helloElement = document.querySelector("#hello h1");
     if (helloElement) {
         helloElement.classList.add('drop-in');
-        intervalID = setInterval(changeGreeting, 75);
+        intervalID = setInterval(changeGreeting, 3000); // Change greeting every 3 seconds
     }
 
     const homeLink = document.getElementById('home-link');
@@ -81,13 +81,40 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { threshold: 0.5 });
         observer.observe(document.querySelector('.seperator'));
     }
+
+    // Handle scroll event for progress bar
+    document.addEventListener('scroll', () => {
+        const docHeight = document.documentElement.scrollHeight;
+        const winHeight = window.innerHeight;
+        const scrollTop = window.scrollY;
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+        document.getElementById('progress-bar').style.width = scrollPercent + '%';
+    });
 });
 
-// Handle scroll event for progress bar
-document.addEventListener('scroll', () => {
-    const docHeight = document.documentElement.scrollHeight;
-    const winHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
-    const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
-    document.getElementById('progress-bar').style.width = scrollPercent + '%';
-});
+// Function to create typewriter effect
+function typeWriter(element, text, delay = 100) {
+    let index = 0;
+    const interval = setInterval(() => {
+        if (index < text.length) {
+            element.innerHTML += text.charAt(index);
+            index++;
+        } else {
+            clearInterval(interval);
+        }
+    }, delay);
+}
+
+// Function to create backspace effect
+function backspace(element, delay = 50) {
+    const text = element.innerHTML;
+    let index = text.length;
+    const interval = setInterval(() => {
+        if (index > 0) {
+            element.innerHTML = text.substring(0, index - 1);
+            index--;
+        } else {
+            clearInterval(interval);
+        }
+    }, delay);
+}
