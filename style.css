@@ -12,9 +12,30 @@ body {
     position: relative;
 }
 
+/* Progress Bar Styles */
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 25px; /* Height of the progress bar */
+    background-color: #e5e6e4; /* Background color similar to the grey box */
+    z-index: 999; /* Just below the header */
+}
+
+#progress-bar {
+    width: 0%; /* Start with 0 width */
+    height: 100%;
+    background-color: #FAF3DD; /* Color of the progress bar */
+    transition: width 0.25s ease-out; /* Smooth transition */
+}
+
+
 #header {
     background-color:#F1F1EF;
-    opacity: 0.98;
+    opacity: 0.97.5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+
 
     margin: 15px auto; 
     padding: 10px;
@@ -54,13 +75,15 @@ body {
     z-index: 999; /* Just below the header */
 }
 
+
 #hello{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    z-index: 999;
     font-size: 35px;
     height: 100vh; /* Full height for centering */
+    color: #FFFF;
 }
 
 #hello h1 {
@@ -79,6 +102,35 @@ body {
 
 .grow {
     animation: grow 1s ease-in forwards;
+}
+
+.landing-page {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow to avoid image stretching */
+    margin-bottom: 100px;
+    opacity: 0.9;
+}
+
+.landing-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the section without stretching */
+    z-index: -1; /* Place it behind the text */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 
@@ -248,28 +300,21 @@ body {
 #internship-title{
     max-width: 270px;
     border-radius: 10px;
-
     font-size: 30px;
 }
 
 #car-title{
     max-width: 610px;
     border-radius: 10px;
-
-
     font-size: 30px;
-
 }
 
 #mouse-title{
     max-width: 200px;
     border-radius: 10px;
-
-
     font-size: 30px;
-
-
 }
+
 /* Greeting animations */
 @keyframes dropIn {
     0% {

@@ -3,7 +3,7 @@ const greetings = [
     "שלום!", "नमस्ते!", "merhaba!", "สวัสดี!", "ہیلو!", "হ্যালো!", "xin chào!", "szia!",
     "здравствуйте!", "hei!", "salam!", "aloha!", "salut!", "sveiki!", "hej!", "përshëndetje!"
 ];
-const welcome = "welcome to my website";
+const welcome = "welcome to my portfolio";
 let currentIndex = 0;
 let intervalID;
 
@@ -32,6 +32,19 @@ function changeGreeting() {
     }, fadeDuration); // Time for fade-out to finish
 }
 
+// Function to handle the home link click
+function handleHomeLinkClick(event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    // Smoothly scroll to the top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Delay the page refresh to allow scrolling to complete
+    setTimeout(() => {
+        window.location.reload(); // Refresh the page
+    }, 500); // Delay in milliseconds (adjust as needed)
+}
+
 // Start the greeting animation on page load
 document.addEventListener('DOMContentLoaded', function() {
     // Initial drop-in and fade effect for "hello!"
@@ -41,11 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set up the interval to change greetings
     intervalID = setInterval(changeGreeting, 75); // Update every 75 milliseconds
 
-    // Refresh the page when "home" is clicked
-    document.getElementById('home-link').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        window.location.reload(); // Refresh the page
-    });
+    // Refresh the page and scroll to the top when "home" is clicked
+    document.getElementById('home-link').addEventListener('click', handleHomeLinkClick);
 
     // Show/hide header based on scroll direction
     let lastScrollTop = 0;
@@ -62,6 +72,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
     });
+
+    // Ensure the page scrolls to the top on load if hash is present
+    if (window.location.hash === '#') {
+        window.scrollTo({ top: 0, behavior: 'auto' }); // Scroll to the top
+        history.replaceState(null, null, window.location.pathname); // Remove the hash
+    }
 });
 
 // Intersection Observer for the separator text
@@ -87,3 +103,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe the separator section
     observer.observe(document.querySelector('.seperator'));
 });
+
+// Handle navigation for the 'home' link
+document.getElementById('home-link').addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default anchor link behavior
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scroll to the top
+    });
+});
+
+// Handle scroll event for progress bar
+document.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight;
+    const winHeight = window.innerHeight;
+    const scrollTop = window.scrollY;
+    const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+    document.getElementById('progress-bar').style.width = scrollPercent + '%';
+});
+
+
+
