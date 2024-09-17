@@ -15,23 +15,22 @@ body {
 }
 
 
-/* Progress Bar Styles */
 #progress-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Full width */
-    height: 25px; /* Height of the progress bar */
-    background-color: #e5e6e4; /* Background color similar to the grey box */
-    z-index: 999; /* Just below the header */
+    width: 100%; 
+    height: 25px; 
+    background-color: #e5e6e4; 
+    z-index: 999; 
 }
 
 
 #progress-bar {
-    width: 0%; /* Start with 0 width */
+    width: 0%;
     height: 100%;
-    background-color: #B3C8CF; /* Color of the progress bar */
-    transition: width 0.25s ease-out; /* Smooth transition */
+    background-color: #B3C8CF;
+    transition: width 0.25s ease-out; 
 }
 
 
@@ -40,10 +39,7 @@ body {
 #header {
     background-color:#F1F1EF;
     opacity: 0.97.5;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
-
-
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 
     margin: 15px auto;
     padding: 10px;
@@ -52,21 +48,18 @@ body {
     height: 75px;
     border-radius: 35px;
 
-
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
-
     position: fixed;
     top: 0;
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
+    left: 50%; 
+    transform: translateX(-50%); 
     transition: top 0.5s ease-in-out;
     z-index: 1000;
    
 }
-
 
 #header a {
     text-decoration: none;
@@ -74,7 +67,6 @@ body {
     font-size: 20px;
     color: #2E2E2E;
 }
-
 
 .grey-box {
     background-color: #e5e6e4;
@@ -84,10 +76,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999; /* Just below the header */
+    z-index: 999; 
 }
-
-
 
 
 #hello{
@@ -96,17 +86,15 @@ body {
     align-items: center;
     z-index: 999;
     font-size: 35px;
-    height: 100vh; /* Full height for centering */
+    height: 100vh; 
     color: #FFFF;
 }
 
-
 #hello h1 {
-    opacity: 5px; /* Start hidden */
-    font-size: 50px; /* Initial font size */
-    animation: dropIn 1s ease-out forwards; /* Initial drop-in */
+    opacity: 5px;
+    font-size: 50px; 
+    animation: dropIn 1s ease-out forwards; 
 }
-
 
 .fade-in {
     animation: fadeIn 0.75s forwards;
@@ -126,8 +114,8 @@ body {
 .landing-page {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide overflow to avoid image stretching */
+    height: 100vh; 
+    overflow: hidden; 
     margin-bottom: 100px;
     opacity: 0.9;
 }
@@ -139,12 +127,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the section without stretching */
-    z-index: -1; /* Place it behind the text */
+    object-fit: cover; 
 }
 
 
-/* Keyframes for fade-in animation */
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -154,19 +141,13 @@ body {
     }
 }
 
-
-
-
-
-
 #about-me {
-    display: flex; /* Ensure flexbox layout */
-    flex-direction: row; /* Align children side by side */
-    align-items: flex-start; /* Align items at the top */
-    margin: 23px auto; /* Add space around the section */
-    max-width: 1100px; /* Control the maximum width of the section */
-    /*border: 2px solid red; /* Debugging border */
-    gap: 40px; /* Space between text and image */
+    display: flex; 
+    flex-direction: row; 
+    align-items: flex-start; 
+    margin: 23px auto; 
+    max-width: 1100px; 
+    gap: 40px; 
     margin-bottom: 100px;
 
 
@@ -174,13 +155,13 @@ body {
 
 
 #about-me .about-me-text {
-    flex: 1; /* Allow text to take available space */
+    flex: 1; 
     font-family: 'Times New Roman', Times, serif;
     font-size: 23px;
     color: #2E2E2E;
-    border: 1px solid #000000; /* Smaller border */
-    padding: 20px; /* Padding inside the text box */
-    border-radius: 5px; /* Optional: rounded corners */
+    border: 1px solid #000000; 
+    padding: 20px; 
+    border-radius: 5px; 
     max-width: 700px;
     line-height: 1.5;
 }
@@ -189,21 +170,20 @@ body {
 #about-me .about-me-text .name {
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 35px; /* Space after this paragraph */
+    margin-bottom: 35px; 
 }
 #about-me .about-me-text .intro {
-    margin-bottom: 35px; /* Space after this paragraph */
+    margin-bottom: 35px; 
 }
 
 
 #about-me .about-me-text .transition {
-    margin-bottom: 35px; /* Space after this paragraph */
+    margin-bottom: 35px; 
 }
 
-/* Typewriter effect */
 @keyframes type {
     from { width: 0; }
-    to { width: 150px; } /* Adjust to fit the width of the text */
+    to { width: 150px; } 
 }
 
 @keyframes blink-caret {
@@ -215,72 +195,56 @@ body {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid #2E2E2E; /* Cursor effect */
+    border-right: 3px solid #2E2E2E; 
     animation: type 0.8s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 
 
 #about-me .about-me-image {
-    flex: 1; /* Allow image container to take available space */
+    flex: 1; 
     display: flex;
-    justify-content: center; /* Center image horizontally within its container */
-    /*border: 1px solid blue; /* Debugging border */
+    justify-content: center;
 }
 
-
 #about-me .about-me-image img {
-    max-width: 100%; /* Ensure image does not exceed container width */
-    height: auto; /* Maintain aspect ratio */
-    width: 100%; /* Ensure image fills the container width */
-    max-width: 450px; /* Optional: limit max-width */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
-    padding: 30px; /* Padding inside the project card */
+    max-width: 100%; 
+    height: auto; 
+    width: 100%; 
+    max-width: 450px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    padding: 30px; 
     border-radius: 15px;
 }
 
-
-
-
-/* CSS for the separator container */
 .seperator {
-    position: relative; /* Ensure it’s a containing block for absolute positioning */
-    height: 100px; /* Adjust as needed */
+    position: relative;
+    height: 100px; 
 }
 
-
-
-
-/* CSS for the separator text */
 #seperator-text {
-    opacity: 0; /* Start hidden */
-    position: absolute; /* Position it above the line */
-    top: 50%; /* Center vertically relative to the line */
-    left: 50%; /* Center horizontally relative to the line */
-    transform: translate(-50%, -50%); /* Center the text */
-    z-index: 1; /* Ensure text is above the line */
-    transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+    opacity: 0; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 1; 
+    transition: opacity 1s ease-in-out; 
     border-radius: 25px;
     font-size: 45px;
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
 }
 
-
-/* Fade-in and fade-out animations */
 .fade-in {
-    opacity: 1; /* Show the text */
-    transition: opacity 1s ease-in-out; /* Smooth fade-in */
+    opacity: 1; 
+    transition: opacity 1s ease-in-out; 
 }
-
 
 .fade-out {
-    opacity: 0; /* Hide the text */
-    transition: opacity 1s ease-in-out; /* Smooth fade-out */
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
 }
-
-
-
 
 @keyframes dropIn {
     0% {
@@ -299,7 +263,6 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    /*border: 2px solid red; /* Add border for visualization */
     font-family: 'Times New Roman', Times, serif;
     font-weight: lighter;
     line-height: 1.5;
@@ -309,15 +272,12 @@ body {
 
 }
 
-
 .project-one{
     margin-bottom: 100px;
     max-width: 750px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
-     /* Padding inside the project card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     border-radius: 15px;
     padding: 25px;
-    /*border: 2px solid blue; /* Add border for visualization */
 }
 
 
@@ -325,51 +285,48 @@ body {
     margin-bottom: 100px;
     margin-left: 500px;
     max-width: 750px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 25px;
     border-radius: 15px;
-    /*border: 2px solid blue; /* Add border for visualization */
 }
 
 
 .project-three{
     margin-bottom: 100px;
     max-width: 750px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     padding: 25px;
     border-radius: 15px;
-    /*border: 2px solid blue; /* Add border for visualization */
 }
-
 
 
 .extras {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Space between the images */
-    justify-content: center; /* Center the images */
+    gap: 20px; 
+    justify-content: center; 
     margin-top: 150px;
-    max-width: 1800px; /* Limit the maximum width of the gallery */
-    margin: 0 auto; /* Center the gallery horizontally */
+    max-width: 1800px; 
+    margin: 0 auto; 
     margin-top: 150px;
 }
 
 .image-container {
     position: relative;
-    flex: 1 1 calc(25% - 20px); /* 4 images per row with space between */
+    flex: 1 1 calc(25% - 20px); 
     box-sizing: border-box;
-    border: 5px solid #fff; /* White border for Polaroid effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    border-radius: 10px; /* Optional: rounded corners */
-    padding: 10px; /* Space around the image */
-    overflow: hidden; /* Ensure image stays within the container */
+    border: 5px solid #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px; 
+    padding: 10px; 
+    overflow: hidden; 
 }
 
 .image-container img {
-    width: 100%; /* Ensures image takes up full width of its container */
+    width: 100%; 
     height: auto;
     display: block;
-    border-radius: 5px; /* Rounded corners inside the Polaroid */
+    border-radius: 5px; 
 }
 
 .overlay {
@@ -378,7 +335,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.5); 
     opacity: 0;
     color: white;
     display: flex;
@@ -394,11 +351,11 @@ body {
 }
 
 .image-container:hover img {
-    opacity: 0.6; /* Darken image on hover */
+    opacity: 0.6; 
 }
 
 .image-container:hover .overlay {
-    opacity: 1; /* Show overlay on hover */
+    opacity: 1; 
 }
 
 
@@ -415,45 +372,42 @@ footer {
 }
   
 footer .social-icons a {
-    display: inline-block; /* Ensure icons are inline-block */
+    display: inline-block; 
     width: 40px;
     height: 40px;
-    line-height: 40px; /* Centers text vertically */
-    margin: 0 6px; /* Adjust margin to 6px on both sides */
-    border-radius: 50%; /* Perfect circle */
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit color from parent */
-    font-size: 24px; /* Adjust size if needed */
+    line-height: 40px; 
+    margin: 0 6px;
+    border-radius: 50%; 
+    text-decoration: none; 
+    color: inherit;
+    font-size: 24px;
 }
   
   footer .social-icons a:hover {
-    background-color: #ddd; /* Light background on hover */
-    color: #000; /* Change icon color on hover if needed */
+    background-color: #ddd;
+    color: #000;
   }
   
-  
-
 
 .highlight {
-    color: black; /* Default text color */
-    font-weight: bold; /* Optional: Make text bold */
-    padding: 0 10px; /* Add some padding around the highlighted text */
-    border-radius: 10px; /* Optional: Rounded corners */
+    color: black;
+    font-weight: bold;
+    padding: 0 10px;
+    border-radius: 10px; 
 }
 .dev{
-    background-color:   #fde995; /* Example color: yellow */
+    background-color:   #fde995;
 }
 
 
 .school {
-    background-color:#ff9fae; /* Example color: blue */
+    background-color:#ff9fae; 
 }
 
 
 .school2 {
-    background-color:   #a7e0f6; /* Example color: green */
+    background-color:   #a7e0f6;
 }
-
 
 #internship-title{
     max-width: 270px;
@@ -476,7 +430,6 @@ footer .social-icons a {
 }
 
 
-/* Greeting animations */
 @keyframes dropIn {
     0% {
         transform: translateY(-50px);
@@ -487,7 +440,6 @@ footer .social-icons a {
         opacity: 1;
     }
 }
-
 
 @keyframes fadeIn {
     to {
@@ -502,18 +454,14 @@ footer .social-icons a {
     }
 }
 
-
 @keyframes grow {
     0% {
         font-size: 35px;
     }
     100% {
-        font-size: 70px; /* End size for welcome text */
+        font-size: 70px; 
     }
 }
-
-
-
 
 html {
     scroll-behavior: smooth;
