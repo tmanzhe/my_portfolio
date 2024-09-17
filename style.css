@@ -30,7 +30,7 @@ body {
 #progress-bar {
     width: 0%; /* Start with 0 width */
     height: 100%;
-    background-color: #FAF3DD; /* Color of the progress bar */
+    background-color: #B3C8CF; /* Color of the progress bar */
     transition: width 0.25s ease-out; /* Smooth transition */
 }
 
@@ -333,60 +333,59 @@ body {
     justify-content: center;
     border-color: 2px #000000 solid;
     height: auto;
-    width: 1000px;
+    width: 1600px;
     margin-left: auto;
     margin-right: auto;
-       
+    margin-top: 150px;
 }
-
 
 .image-container{
-    flex: 1 1 calc(33.333% - 20px);  /* Adjust width for a 3-column layout */
+    flex: 1 1 calc(25% - 10px); 
     box-sizing: border-box;
 }
+
 
 
 img {
     width: 100%;  /* Ensures image takes up full width of its container */
     height: auto;
     display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+    padding: 30px; /* Padding inside the project card */
+    border-radius: 15px;
+    /*B3C8CF8*/
   }
 
-
-  .extras {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Auto-fill columns */
-    gap: 10px;  /* Space between items */
+  footer {
+    margin-top: 100px;
+    padding: 30px 0 20px;
+    font-size: 15px;
+    line-height: 10px;
+    opacity: 0.8;
   }
- 
-  .image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
+  
+  .social-icons {
+    text-align: center;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  footer .social-icons a {
+    display: inline-block; /* Ensure icons are inline-block */
+    width: 40px;
+    height: 40px;
+    line-height: 40px; /* Centers text vertically */
+    margin: 0 6px; /* Adjust margin to 6px on both sides */
+    border-radius: 50%; /* Perfect circle */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    font-size: 24px; /* Adjust size if needed */
+  }
+  
+  footer .social-icons a:hover {
+    background-color: #ddd; /* Light background on hover */
+    color: #000; /* Change icon color on hover if needed */
+  }
+  
+  
 
 
 
