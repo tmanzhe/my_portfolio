@@ -141,7 +141,7 @@ body {
     align-items: flex-start; /* Align items at the top */
     margin: 23px auto; /* Add space around the section */
     max-width: 1100px; /* Control the maximum width of the section */
-    border: 2px solid red; /* Debugging border */
+    /*border: 2px solid red; /* Debugging border */
     gap: 40px; /* Space between text and image */
     margin-bottom: 100px;
 

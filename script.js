@@ -12,6 +12,12 @@ function changeGreeting() {
     const helloElement = document.querySelector("#hello h1");
     const fadeDuration = 75; // Fade duration in milliseconds
 
+    // Check if helloElement is found
+    if (!helloElement) {
+        console.error("Element #hello h1 not found.");
+        return;
+    }
+
     // Fade out the current greeting
     helloElement.classList.add('fade-out');
     setTimeout(() => {
@@ -32,51 +38,43 @@ function changeGreeting() {
     }, fadeDuration); // Time for fade-out to finish
 }
 
-// Function to handle the home link click
-function handleHomeLinkClick(event) {
-    event.preventDefault(); // Prevent default link behavior
-
-    // Smoothly scroll to the top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // Delay the page refresh to allow scrolling to complete
-    setTimeout(() => {
-        window.location.reload(); // Refresh the page
-    }, 500); // Delay in milliseconds (adjust as needed)
-}
-
-// Start the greeting animation on page load
 document.addEventListener('DOMContentLoaded', function() {
+    // Ensure the page scrolls to the top on load
+    window.scrollTo({ top: 0, behavior: 'auto' });
+
     // Initial drop-in and fade effect for "hello!"
     const helloElement = document.querySelector("#hello h1");
-    helloElement.classList.add('drop-in');
+    if (helloElement) {
+        helloElement.classList.add('drop-in');
 
-    // Set up the interval to change greetings
-    intervalID = setInterval(changeGreeting, 75); // Update every 75 milliseconds
+        // Set up the interval to change greetings
+        intervalID = setInterval(changeGreeting, 75); // Update every 75 milliseconds
 
-    // Refresh the page and scroll to the top when "home" is clicked
-    document.getElementById('home-link').addEventListener('click', handleHomeLinkClick);
+        // Smooth scroll to the top when "home" is clicked
+        document.getElementById('home-link').addEventListener('click', handleHomeLinkClick);
 
-    // Show/hide header based on scroll direction
-    let lastScrollTop = 0;
-    document.addEventListener('scroll', function() {
-        let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        // Show/hide header based on scroll direction
+        let lastScrollTop = 0;
+        document.addEventListener('scroll', function() {
+            let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (currentScrollTop > lastScrollTop) {
-            // Scrolling down, hide header
-            document.getElementById('header').style.top = '-70px';
-        } else {
-            // Scrolling up, show header
-            document.getElementById('header').style.top = '0';
+            if (currentScrollTop > lastScrollTop) {
+                // Scrolling down, hide header
+                document.getElementById('header').style.top = '-70px';
+            } else {
+                // Scrolling up, show header
+                document.getElementById('header').style.top = '0';
+            }
+
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+        });
+
+        // Remove any hash fragment from the URL
+        if (window.location.hash) {
+            history.replaceState(null, null, window.location.pathname);
         }
-
-        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-    });
-
-    // Ensure the page scrolls to the top on load if hash is present
-    if (window.location.hash === '#') {
-        window.scrollTo({ top: 0, behavior: 'auto' }); // Scroll to the top
-        history.replaceState(null, null, window.location.pathname); // Remove the hash
+    } else {
+        console.error("Element #hello h1 not found on page load.");
     }
 });
 
@@ -84,33 +82,28 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const separatorText = document.querySelector('#seperator-text');
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // When the separator is in view, trigger the fade-in animation
-                separatorText.classList.add('fade-in');
-                separatorText.classList.remove('fade-out');
-            } else {
-                // When the separator is out of view, trigger the fade-out animation
-                separatorText.classList.add('fade-out');
-                separatorText.classList.remove('fade-in');
-            }
+    if (separatorText) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the separator is in view, trigger the fade-in animation
+                    separatorText.classList.add('fade-in');
+                    separatorText.classList.remove('fade-out');
+                } else {
+                    // When the separator is out of view, trigger the fade-out animation
+                    separatorText.classList.add('fade-out');
+                    separatorText.classList.remove('fade-in');
+                }
+            });
+        }, {
+            threshold: 0.5 // Trigger when 50% of the separator is visible
         });
-    }, {
-        threshold: 0.5 // Trigger when 50% of the separator is visible
-    });
 
-    // Observe the separator section
-    observer.observe(document.querySelector('.seperator'));
-});
-
-// Handle navigation for the 'home' link
-document.getElementById('home-link').addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent default anchor link behavior
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Smooth scroll to the top
-    });
+        // Observe the separator section
+        observer.observe(document.querySelector('.seperator'));
+    } else {
+        console.error("Element #seperator-text not found.");
+    }
 });
 
 // Handle scroll event for progress bar
@@ -121,6 +114,3 @@ document.addEventListener('scroll', () => {
     const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
     document.getElementById('progress-bar').style.width = scrollPercent + '%';
 });
-
-
-
