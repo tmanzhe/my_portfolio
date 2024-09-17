@@ -12,9 +12,30 @@ body {
     position: relative;
 }
 
+/* Progress Bar Styles */
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 25px; /* Height of the progress bar */
+    background-color: #e5e6e4; /* Background color similar to the grey box */
+    z-index: 999; /* Just below the header */
+}
+
+#progress-bar {
+    width: 0%; /* Start with 0 width */
+    height: 100%;
+    background-color: #FAF3DD; /* Color of the progress bar */
+    transition: width 0.25s ease-out; /* Smooth transition */
+}
+
+
 #header {
-    background-color: #e5e6e4;
-    opacity: 0.98;
+    background-color:#F1F1EF;
+    opacity: 0.97.5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+
 
     margin: 15px auto; 
     padding: 10px;
@@ -44,7 +65,7 @@ body {
 }
 
 .grey-box {
-    background-color: #cfd2cd;
+    background-color: #e5e6e4;
     opacity: 0.9;
     width: 100%;
     height: 25px;
@@ -54,13 +75,15 @@ body {
     z-index: 999; /* Just below the header */
 }
 
+
 #hello{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    z-index: 999;
     font-size: 35px;
     height: 100vh; /* Full height for centering */
+    color: #FFFF;
 }
 
 #hello h1 {
@@ -81,6 +104,36 @@ body {
     animation: grow 1s ease-in forwards;
 }
 
+.landing-page {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow to avoid image stretching */
+    margin-bottom: 100px;
+    opacity: 0.9;
+}
+
+.landing-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the section without stretching */
+    z-index: -1; /* Place it behind the text */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 #about-me {
     display: flex; /* Ensure flexbox layout */
@@ -90,7 +143,8 @@ body {
     max-width: 1100px; /* Control the maximum width of the section */
     border: 2px solid red; /* Debugging border */
     gap: 40px; /* Space between text and image */
-    margin-bottom: 300px;
+    margin-bottom: 100px;
+
 }
 
 #about-me .about-me-text {
@@ -98,7 +152,7 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 23px;
     color: #2E2E2E;
-    border: 1px solid #530101; /* Smaller border */
+    border: 1px solid #000000; /* Smaller border */
     padding: 20px; /* Padding inside the text box */
     border-radius: 5px; /* Optional: rounded corners */
     max-width: 700px;
@@ -136,13 +190,50 @@ body {
     border-radius: 15px;
 }
 
-.seperator{
-    background-color: #cfd2cd;
-    opacity: 0.9;
-    width: 1500px;
-    height: 25px;
-    border-radius: 30px;
 
+/* CSS for the separator container */
+.seperator {
+    position: relative; /* Ensure it’s a containing block for absolute positioning */
+    height: 100px; /* Adjust as needed */
+}
+
+
+/* CSS for the separator text */
+#seperator-text {
+    opacity: 0; /* Start hidden */
+    position: absolute; /* Position it above the line */
+    top: 50%; /* Center vertically relative to the line */
+    left: 50%; /* Center horizontally relative to the line */
+    transform: translate(-50%, -50%); /* Center the text */
+    z-index: 1; /* Ensure text is above the line */
+    transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+    border-radius: 25px;
+    font-size: 45px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Fade-in and fade-out animations */
+.fade-in {
+    opacity: 1; /* Show the text */
+    transition: opacity 1s ease-in-out; /* Smooth fade-in */
+}
+
+.fade-out {
+    opacity: 0; /* Hide the text */
+    transition: opacity 1s ease-in-out; /* Smooth fade-out */
+}
+
+
+@keyframes dropIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .project {
@@ -150,13 +241,12 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    margin-top: 100px;
-    border: 2px solid red; /* Add border for visualization */
-
+    /*border: 2px solid red; /* Add border for visualization */
     font-family: 'Times New Roman', Times, serif;
     font-weight: lighter;
     line-height: 1.5;
     font-size: 23px;
+    margin-top: 100px;
 
 }
 
@@ -170,12 +260,10 @@ body {
     /*border: 2px solid blue; /* Add border for visualization */
 }
 
-
 .project-two{
     margin-bottom: 100px;
     margin-left: 500px;
     max-width: 750px;
-
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
     padding: 25px;
     border-radius: 15px;
@@ -185,13 +273,11 @@ body {
 .project-three{
     margin-bottom: 100px;
     max-width: 750px;
-
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
     padding: 25px;
     border-radius: 15px;
     /*border: 2px solid blue; /* Add border for visualization */
 }
-
 
 .highlight {
     color: black; /* Default text color */
@@ -199,7 +285,6 @@ body {
     padding: 0 10px; /* Add some padding around the highlighted text */
     border-radius: 10px; /* Optional: Rounded corners */
 }
-
 .dev{
     background-color: 	#fde995; /* Example color: yellow */
 }
@@ -229,7 +314,6 @@ body {
     border-radius: 10px;
     font-size: 30px;
 }
-
 
 /* Greeting animations */
 @keyframes dropIn {
