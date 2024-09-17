@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 body {
     font-family: 'Albert Sans', sans-serif;
     background-color: #F5F5F5;
     position: relative;
 }
+
 
 /* Progress Bar Styles */
 #progress-container {
@@ -23,6 +26,7 @@ body {
     z-index: 999; /* Just below the header */
 }
 
+
 #progress-bar {
     width: 0%; /* Start with 0 width */
     height: 100%;
@@ -31,31 +35,38 @@ body {
 }
 
 
+
+
 #header {
     background-color:#F1F1EF;
     opacity: 0.97.5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
 
 
-    margin: 15px auto; 
+
+
+    margin: 15px auto;
     padding: 10px;
     max-width: 600px;
     width: 90%;
     height: 75px;
     border-radius: 35px;
 
+
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
-    position: fixed; 
+
+    position: fixed;
     top: 0;
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for centering */
-    transition: top 0.5s ease-in-out; 
-    z-index: 1000; 
-    
+    transition: top 0.5s ease-in-out;
+    z-index: 1000;
+   
 }
+
 
 #header a {
     text-decoration: none;
@@ -63,6 +74,7 @@ body {
     font-size: 20px;
     color: #2E2E2E;
 }
+
 
 .grey-box {
     background-color: #e5e6e4;
@@ -76,6 +88,8 @@ body {
 }
 
 
+
+
 #hello{
     display: flex;
     justify-content: center;
@@ -86,23 +100,28 @@ body {
     color: #FFFF;
 }
 
+
 #hello h1 {
     opacity: 5px; /* Start hidden */
     font-size: 50px; /* Initial font size */
     animation: dropIn 1s ease-out forwards; /* Initial drop-in */
 }
 
+
 .fade-in {
     animation: fadeIn 0.75s forwards;
 }
+
 
 .fade-out {
     animation: fadeOut 0.75s forwards;
 }
 
+
 .grow {
     animation: grow 1s ease-in forwards;
 }
+
 
 .landing-page {
     position: relative;
@@ -113,6 +132,7 @@ body {
     opacity: 0.9;
 }
 
+
 .landing-video {
     position: absolute;
     top: 0;
@@ -122,6 +142,7 @@ body {
     object-fit: cover; /* Cover the section without stretching */
     z-index: -1; /* Place it behind the text */
 }
+
 
 /* Keyframes for fade-in animation */
 @keyframes fadeIn {
@@ -135,6 +156,9 @@ body {
 
 
 
+
+
+
 #about-me {
     display: flex; /* Ensure flexbox layout */
     flex-direction: row; /* Align children side by side */
@@ -145,7 +169,9 @@ body {
     gap: 40px; /* Space between text and image */
     margin-bottom: 100px;
 
+
 }
+
 
 #about-me .about-me-text {
     flex: 1; /* Allow text to take available space */
@@ -159,6 +185,7 @@ body {
     line-height: 1.5;
 }
 
+
 #about-me .about-me-text .name {
     font-size: 30px;
     font-weight: bold;
@@ -168,9 +195,11 @@ body {
     margin-bottom: 35px; /* Space after this paragraph */
 }
 
+
 #about-me .about-me-text .transition {
     margin-bottom: 35px; /* Space after this paragraph */
 }
+
 
 #about-me .about-me-image {
     flex: 1; /* Allow image container to take available space */
@@ -178,7 +207,9 @@ body {
     justify-content: center; /* Center image horizontally within its container */
     /*border: 1px solid blue; /* Debugging border */
 
+
 }
+
 
 #about-me .about-me-image img {
     max-width: 100%; /* Ensure image does not exceed container width */
@@ -191,11 +222,15 @@ body {
 }
 
 
+
+
 /* CSS for the separator container */
 .seperator {
     position: relative; /* Ensure it’s a containing block for absolute positioning */
     height: 100px; /* Adjust as needed */
 }
+
+
 
 
 /* CSS for the separator text */
@@ -213,16 +248,20 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
+
 /* Fade-in and fade-out animations */
 .fade-in {
     opacity: 1; /* Show the text */
     transition: opacity 1s ease-in-out; /* Smooth fade-in */
 }
 
+
 .fade-out {
     opacity: 0; /* Hide the text */
     transition: opacity 1s ease-in-out; /* Smooth fade-out */
 }
+
+
 
 
 @keyframes dropIn {
@@ -235,6 +274,7 @@ body {
         opacity: 1;
     }
 }
+
 
 .project {
     max-width: 1250px;
@@ -248,7 +288,9 @@ body {
     font-size: 23px;
     margin-top: 100px;
 
+
 }
+
 
 .project-one{
     margin-bottom: 100px;
@@ -260,6 +302,7 @@ body {
     /*border: 2px solid blue; /* Add border for visualization */
 }
 
+
 .project-two{
     margin-bottom: 100px;
     margin-left: 500px;
@@ -270,6 +313,7 @@ body {
     /*border: 2px solid blue; /* Add border for visualization */
 }
 
+
 .project-three{
     margin-bottom: 100px;
     max-width: 750px;
@@ -279,6 +323,75 @@ body {
     /*border: 2px solid blue; /* Add border for visualization */
 }
 
+
+
+
+.extras{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    border-color: 2px #000000 solid;
+    height: auto;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+       
+}
+
+
+.image-container{
+    flex: 1 1 calc(33.333% - 20px);  /* Adjust width for a 3-column layout */
+    box-sizing: border-box;
+}
+
+
+img {
+    width: 100%;  /* Ensures image takes up full width of its container */
+    height: auto;
+    display: block;
+  }
+
+
+  .extras {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Auto-fill columns */
+    gap: 10px;  /* Space between items */
+  }
+ 
+  .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .highlight {
     color: black; /* Default text color */
     font-weight: bold; /* Optional: Make text bold */
@@ -286,16 +399,19 @@ body {
     border-radius: 10px; /* Optional: Rounded corners */
 }
 .dev{
-    background-color: 	#fde995; /* Example color: yellow */
+    background-color:   #fde995; /* Example color: yellow */
 }
+
 
 .school {
     background-color:#ff9fae; /* Example color: blue */
 }
 
+
 .school2 {
-    background-color: 	#a7e0f6; /* Example color: green */
+    background-color:   #a7e0f6; /* Example color: green */
 }
+
 
 #internship-title{
     max-width: 270px;
@@ -303,17 +419,20 @@ body {
     font-size: 30px;
 }
 
+
 #car-title{
     max-width: 610px;
     border-radius: 10px;
     font-size: 30px;
 }
 
+
 #mouse-title{
     max-width: 200px;
     border-radius: 10px;
     font-size: 30px;
 }
+
 
 /* Greeting animations */
 @keyframes dropIn {
@@ -327,17 +446,20 @@ body {
     }
 }
 
+
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
 
+
 @keyframes fadeOut {
     to {
         opacity: 0;
     }
 }
+
 
 @keyframes grow {
     0% {
@@ -347,6 +469,9 @@ body {
         font-size: 70px; /* End size for welcome text */
     }
 }
+
+
+
 
 html {
     scroll-behavior: smooth;
