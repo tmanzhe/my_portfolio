@@ -33,8 +33,6 @@ body {
     transform: translateX(-50%); /* Adjust for centering */
     transition: top 0.5s ease-in-out; 
     z-index: 1000; 
-
-   
     
 }
 
@@ -65,39 +63,6 @@ body {
     height: 100vh; /* Full height for centering */
 }
 
-/* Greeting animations */
-@keyframes dropIn {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes grow {
-    0% {
-        font-size: 35px;
-    }
-    100% {
-        font-size: 70px; /* End size for welcome text */
-    }
-}
-
 #hello h1 {
     opacity: 5px; /* Start hidden */
     font-size: 50px; /* Initial font size */
@@ -117,17 +82,15 @@ body {
 }
 
 
-
 #about-me {
     display: flex; /* Ensure flexbox layout */
     flex-direction: row; /* Align children side by side */
     align-items: flex-start; /* Align items at the top */
     margin: 23px auto; /* Add space around the section */
     max-width: 1100px; /* Control the maximum width of the section */
-    /*border: 2px solid red; /* Debugging border */
+    border: 2px solid red; /* Debugging border */
     gap: 40px; /* Space between text and image */
-    margin-bottom: 150px;
-
+    margin-bottom: 300px;
 }
 
 #about-me .about-me-text {
@@ -135,7 +98,7 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 23px;
     color: #2E2E2E;
-    /*border: 1px solid #530101; /* Smaller border */
+    border: 1px solid #530101; /* Smaller border */
     padding: 20px; /* Padding inside the text box */
     border-radius: 5px; /* Optional: rounded corners */
     max-width: 700px;
@@ -173,19 +136,27 @@ body {
     border-radius: 15px;
 }
 
+.seperator{
+    background-color: #cfd2cd;
+    opacity: 0.9;
+    width: 1500px;
+    height: 25px;
+    border-radius: 30px;
+
+}
+
 .project {
     max-width: 1250px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    /*border: 2px solid red; /* Add border for visualization */
+    margin-top: 100px;
+    border: 2px solid red; /* Add border for visualization */
 
     font-family: 'Times New Roman', Times, serif;
     font-weight: lighter;
     line-height: 1.5;
     font-size: 23px;
-    
-
 
 }
 
@@ -197,7 +168,6 @@ body {
     border-radius: 15px;
     padding: 25px;
     /*border: 2px solid blue; /* Add border for visualization */
-
 }
 
 
@@ -209,68 +179,18 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
     padding: 25px;
     border-radius: 15px;
-
-
-
     /*border: 2px solid blue; /* Add border for visualization */
-
 }
 
 .project-three{
     margin-bottom: 100px;
     max-width: 750px;
 
-
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
     padding: 25px;
     border-radius: 15px;
-
-
-    
-
-
     /*border: 2px solid blue; /* Add border for visualization */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .highlight {
@@ -295,27 +215,53 @@ body {
 #internship-title{
     max-width: 270px;
     border-radius: 10px;
-
     font-size: 30px;
 }
 
 #car-title{
     max-width: 610px;
     border-radius: 10px;
-
-
     font-size: 30px;
-
 }
 
 #mouse-title{
     max-width: 200px;
     border-radius: 10px;
-
-
     font-size: 30px;
+}
 
 
+/* Greeting animations */
+@keyframes dropIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes grow {
+    0% {
+        font-size: 35px;
+    }
+    100% {
+        font-size: 70px; /* End size for welcome text */
+    }
 }
 
 html {
