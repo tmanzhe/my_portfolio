@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body {
     font-family: 'Albert Sans', sans-serif;
@@ -12,31 +14,59 @@ body {
     position: relative;
 }
 
-#header {
-    background-color: #e5e6e4;
-    opacity: 0.98;
 
-    margin: 15px auto; 
+/* Progress Bar Styles */
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 25px; /* Height of the progress bar */
+    background-color: #e5e6e4; /* Background color similar to the grey box */
+    z-index: 999; /* Just below the header */
+}
+
+
+#progress-bar {
+    width: 0%; /* Start with 0 width */
+    height: 100%;
+    background-color: #B3C8CF; /* Color of the progress bar */
+    transition: width 0.25s ease-out; /* Smooth transition */
+}
+
+
+
+
+#header {
+    background-color:#F1F1EF;
+    opacity: 0.97.5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+
+
+
+
+    margin: 15px auto;
     padding: 10px;
     max-width: 600px;
     width: 90%;
     height: 75px;
     border-radius: 35px;
 
+
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
-    position: fixed; 
+
+    position: fixed;
     top: 0;
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for centering */
-    transition: top 0.5s; 
-    z-index: 1000; 
-
+    transition: top 0.5s ease-in-out;
+    z-index: 1000;
    
-    
 }
+
 
 #header a {
     text-decoration: none;
@@ -45,8 +75,9 @@ body {
     color: #2E2E2E;
 }
 
+
 .grey-box {
-    background-color: #cfd2cd;
+    background-color: #e5e6e4;
     opacity: 0.9;
     width: 100%;
     height: 25px;
@@ -56,14 +87,347 @@ body {
     z-index: 999; /* Just below the header */
 }
 
+
+
+
 #hello{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    z-index: 999;
     font-size: 35px;
     height: 100vh; /* Full height for centering */
+    color: #FFFF;
 }
+
+
+#hello h1 {
+    opacity: 5px; /* Start hidden */
+    font-size: 50px; /* Initial font size */
+    animation: dropIn 1s ease-out forwards; /* Initial drop-in */
+}
+
+
+.fade-in {
+    animation: fadeIn 0.75s forwards;
+}
+
+
+.fade-out {
+    animation: fadeOut 0.75s forwards;
+}
+
+
+.grow {
+    animation: grow 1s ease-in forwards;
+}
+
+
+.landing-page {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow to avoid image stretching */
+    margin-bottom: 100px;
+    opacity: 0.9;
+}
+
+
+.landing-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the section without stretching */
+    z-index: -1; /* Place it behind the text */
+}
+
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+#about-me {
+    display: flex; /* Ensure flexbox layout */
+    flex-direction: row; /* Align children side by side */
+    align-items: flex-start; /* Align items at the top */
+    margin: 23px auto; /* Add space around the section */
+    max-width: 1100px; /* Control the maximum width of the section */
+    /*border: 2px solid red; /* Debugging border */
+    gap: 40px; /* Space between text and image */
+    margin-bottom: 100px;
+
+
+}
+
+
+#about-me .about-me-text {
+    flex: 1; /* Allow text to take available space */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
+    color: #2E2E2E;
+    border: 1px solid #000000; /* Smaller border */
+    padding: 20px; /* Padding inside the text box */
+    border-radius: 5px; /* Optional: rounded corners */
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+
+#about-me .about-me-text .name {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 35px; /* Space after this paragraph */
+}
+#about-me .about-me-text .intro {
+    margin-bottom: 35px; /* Space after this paragraph */
+}
+
+
+#about-me .about-me-text .transition {
+    margin-bottom: 35px; /* Space after this paragraph */
+}
+
+
+#about-me .about-me-image {
+    flex: 1; /* Allow image container to take available space */
+    display: flex;
+    justify-content: center; /* Center image horizontally within its container */
+    /*border: 1px solid blue; /* Debugging border */
+
+
+}
+
+
+#about-me .about-me-image img {
+    max-width: 100%; /* Ensure image does not exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Ensure image fills the container width */
+    max-width: 450px; /* Optional: limit max-width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+    padding: 30px; /* Padding inside the project card */
+    border-radius: 15px;
+}
+
+
+
+
+/* CSS for the separator container */
+.seperator {
+    position: relative; /* Ensure it’s a containing block for absolute positioning */
+    height: 100px; /* Adjust as needed */
+}
+
+
+
+
+/* CSS for the separator text */
+#seperator-text {
+    opacity: 0; /* Start hidden */
+    position: absolute; /* Position it above the line */
+    top: 50%; /* Center vertically relative to the line */
+    left: 50%; /* Center horizontally relative to the line */
+    transform: translate(-50%, -50%); /* Center the text */
+    z-index: 1; /* Ensure text is above the line */
+    transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+    border-radius: 25px;
+    font-size: 45px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* Fade-in and fade-out animations */
+.fade-in {
+    opacity: 1; /* Show the text */
+    transition: opacity 1s ease-in-out; /* Smooth fade-in */
+}
+
+
+.fade-out {
+    opacity: 0; /* Hide the text */
+    transition: opacity 1s ease-in-out; /* Smooth fade-out */
+}
+
+
+
+
+@keyframes dropIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.project {
+    max-width: 1250px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    /*border: 2px solid red; /* Add border for visualization */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    line-height: 1.5;
+    font-size: 23px;
+    margin-top: 100px;
+
+
+}
+
+
+.project-one{
+    margin-bottom: 100px;
+    max-width: 750px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+     /* Padding inside the project card */
+    border-radius: 15px;
+    padding: 25px;
+    /*border: 2px solid blue; /* Add border for visualization */
+}
+
+
+.project-two{
+    margin-bottom: 100px;
+    margin-left: 500px;
+    max-width: 750px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+    padding: 25px;
+    border-radius: 15px;
+    /*border: 2px solid blue; /* Add border for visualization */
+}
+
+
+.project-three{
+    margin-bottom: 100px;
+    max-width: 750px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+    padding: 25px;
+    border-radius: 15px;
+    /*border: 2px solid blue; /* Add border for visualization */
+}
+
+
+
+
+.extras{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    border-color: 2px #000000 solid;
+    height: auto;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+.image-container{
+    flex: 1 1 calc(25% - 10px); 
+    box-sizing: border-box;
+}
+
+
+img {
+    width: 100%;  /* Ensures image takes up full width of its container */
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+    padding: 30px; /* Padding inside the project card */
+    border-radius: 15px;
+    /*B3C8CF8*/
+  }
+
+  footer {
+    margin-top: 100px;
+    padding: 30px 0 20px;
+    font-size: 15px;
+    line-height: 10px;
+    opacity: 0.8;
+  }
+  
+  .social-icons {
+    text-align: center;
+  }
+  
+  footer .social-icons a {
+    display: inline-block; /* Ensure icons are inline-block */
+    width: 40px;
+    height: 40px;
+    line-height: 40px; /* Centers text vertically */
+    margin: 0 6px; /* Adjust margin to 6px on both sides */
+    border-radius: 50%; /* Perfect circle */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    font-size: 24px; /* Adjust size if needed */
+  }
+  
+  footer .social-icons a:hover {
+    background-color: #ddd; /* Light background on hover */
+    color: #000; /* Change icon color on hover if needed */
+  }
+  
+  
+
+
+.highlight {
+    color: black; /* Default text color */
+    font-weight: bold; /* Optional: Make text bold */
+    padding: 0 10px; /* Add some padding around the highlighted text */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+.dev{
+    background-color:   #fde995; /* Example color: yellow */
+}
+
+
+.school {
+    background-color:#ff9fae; /* Example color: blue */
+}
+
+
+.school2 {
+    background-color:   #a7e0f6; /* Example color: green */
+}
+
+
+#internship-title{
+    max-width: 270px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+
+#car-title{
+    max-width: 610px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+
+#mouse-title{
+    max-width: 200px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
 
 /* Greeting animations */
 @keyframes dropIn {
@@ -77,17 +441,20 @@ body {
     }
 }
 
+
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
 
+
 @keyframes fadeOut {
     to {
         opacity: 0;
     }
 }
+
 
 @keyframes grow {
     0% {
@@ -98,184 +465,8 @@ body {
     }
 }
 
-#hello h1 {
-    opacity: 5px; /* Start hidden */
-    font-size: 50px; /* Initial font size */
-    animation: dropIn 1s ease-out forwards; /* Initial drop-in */
-}
-
-.fade-in {
-    animation: fadeIn 0.75s forwards;
-}
-
-.fade-out {
-    animation: fadeOut 0.75s forwards;
-}
-
-.grow {
-    animation: grow 1s ease-in forwards;
-}
 
 
-
-#about-me {
-    display: flex; /* Ensure flexbox layout */
-    flex-direction: row; /* Align children side by side */
-    align-items: flex-start; /* Align items at the top */
-    margin: 23px auto; /* Add space around the section */
-    max-width: 1100px; /* Control the maximum width of the section */
-    /*border: 2px solid red; /* Debugging border */
-    gap: 40px; /* Space between text and image */
-    margin-bottom: 150px;
-
-}
-
-#about-me .about-me-text {
-    flex: 1; /* Allow text to take available space */
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 23px;
-    color: #2E2E2E;
-    /*border: 1px solid #530101; /* Smaller border */
-    padding: 20px; /* Padding inside the text box */
-    border-radius: 5px; /* Optional: rounded corners */
-    max-width: 700px;
-    line-height: 1.5;
-}
-
-#about-me .about-me-text .name {
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 35px; /* Space after this paragraph */
-}
-#about-me .about-me-text .intro {
-    margin-bottom: 35px; /* Space after this paragraph */
-}
-
-#about-me .about-me-text .transition {
-    margin-bottom: 35px; /* Space after this paragraph */
-}
-
-#about-me .about-me-image {
-    flex: 1; /* Allow image container to take available space */
-    display: flex;
-    justify-content: center; /* Center image horizontally within its container */
-    /*border: 1px solid blue; /* Debugging border */
-
-}
-
-#about-me .about-me-image img {
-    max-width: 100%; /* Ensure image does not exceed container width */
-    height: auto; /* Maintain aspect ratio */
-    width: 100%; /* Ensure image fills the container width */
-    max-width: 450px; /* Optional: limit max-width */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
-    padding: 30px; /* Padding inside the project card */
-    border-radius: 15px;
-}
-
-.project {
-    max-width: 1250px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    /*border: 2px solid red; /* Add border for visualization */
-
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: lighter;
-    line-height: 1.5;
-    font-size: 23px;
-    
-
-
-}
-
-.project-one{
-    margin-bottom: 100px;
-    max-width: 750px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
-     /* Padding inside the project card */
-    border-radius: 15px;
-    padding: 25px;
-    /*border: 2px solid blue; /* Add border for visualization */
-
-}
-
-
-.project-two{
-    margin-bottom: 100px;
-    margin-left: 500px;
-    max-width: 750px;
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
-    padding: 25px;
-    border-radius: 15px;
-
-
-
-    /*border: 2px solid blue; /* Add border for visualization */
-
-}
-
-.project-three{
-    margin-bottom: 100px;
-    max-width: 750px;
-
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow */
-    padding: 25px;
-    border-radius: 15px;
-
-
-    
-
-
-    /*border: 2px solid blue; /* Add border for visualization */
-}
-
-.highlight {
-    color: black; /* Default text color */
-    font-weight: bold; /* Optional: Make text bold */
-    padding: 0 10px; /* Add some padding around the highlighted text */
-    border-radius: 10px; /* Optional: Rounded corners */
-}
-
-.dev{
-    background-color: 	#fde995; /* Example color: yellow */
-}
-
-.school {
-    background-color:#ff9fae; /* Example color: blue */
-}
-
-.school2 {
-    background-color: 	#a7e0f6; /* Example color: green */
-}
-
-#internship-title{
-    max-width: 270px;
-    border-radius: 10px;
-
-    font-size: 30px;
-}
-
-#car-title{
-    max-width: 610px;
-    border-radius: 10px;
-
-
-    font-size: 30px;
-
-}
-
-#mouse-title{
-    max-width: 200px;
-    border-radius: 10px;
-
-
-    font-size: 30px;
-
-
-}
 
 html {
     scroll-behavior: smooth;

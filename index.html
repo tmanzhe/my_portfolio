@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truman Chan</title>
+    <title>tman website</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<link rel="icon" type="image/png" href="assets/headshot2.jpg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
 
 <body>
-
-
     <header>
-        <div class = "grey-box"></div>
-        <nav id = "header">
-            <a href="#hello">home</a> 
-            <a href="#about-me">about me</a>  
-            <a href="">my work</a>  
-            <a href="">resume</a>
-            <a href="">extras</a>
+        <nav id="header">
+            <a href="#" id="home-link">home</a>
+            <a href="#about-me">about me</a>
+            <a href="#seperator-text">my work</a>
+            <a href="#">resume</a>
+            <a href="extras.html">extras</a>
         </nav>
-    </header>
-
-
-<main>
-
-    <section>
-        <div id = "hello">
-            <h1 id="greeting-text"></h1> 
-
+        <div id="progress-container">
+            <div id="progress-bar"></div>
         </div>
-    </section>
+    </header>
+   
+    <main>
+        <section class="landing-page">
+            <div id="hello">
+                <h1 id="greeting-text"></h1>
+            </div>
+            <video class="landing-video" autoplay muted loop>
+                <source src="assets/video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>  
+        </section>
 
-    <hr>
+
+
 
     <section id="about-me">
         <div class="about-me-text">
@@ -46,9 +52,15 @@
             <img src="assets/headshot2.JPG" alt="About Me Image">
         </div>
     </section>
-    
 
-    <section class = "project" id = "my-work">
+
+    <section class="seperator">
+        <div class="line"></div>
+        <h1 id="seperator-text">my projects and experiences</h1>
+    </section>
+   
+    <section class = "project">
+
 
         <div class = "project-one">
             <h1 id = "internship-title"> mobile dev @ itmz</h1>
@@ -57,30 +69,58 @@
         </div>
 
 
+
+
         <div class = "project-two">
             <h1 id="car-title">self driving car simulation w neural networks</h1>
             <h3 id = "car-date">may 2024 - aug 2024</h3>
             <p id = "car-about">Developed a self-driving car simulation from scratch using JavaScript, without relying on external libraries. This project involved implementing every component necessary for a functional simulation, including car driving mechanics, environmental definitions, sensor simulations, and collision detection.</p>
         </div>
 
+
+
+
         <div class = "project-three">
             <h1 id = "mouse-title">virtual mouse</h1>
-            <h3 id = "mouse-date">jan 2024 - may 2024</h3>
-            <p id = "mouse-about">Developed an innovative virtual mouse application that utilizes hand gesture recognition to control the mouse cursor, leveraging MediaPipe's Hands Module and OpenCV in Python. This project demonstrates advanced computer vision and AI capabilities to create a hands-free user interface.</p>
-
+            <h3 id = "mouse-date">july 2024 - present</h3>
+            <p id = "mouse-about">FUCK NEEDF TO FINISH THIS ASAP FUCK FUCK FUCK </p>
         </div>
-        
-    </section>
+   
+        </section>
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/cu-trumanchan" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/tmanzhe" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:trumanzhe@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
     
-    
-
-</main>
 
 
-<footer>
-    <p></p>
-</footer>
 
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
+
