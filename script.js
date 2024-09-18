@@ -7,10 +7,9 @@ const welcome = "welcome to my portfolio";
 let currentIndex = 0;
 let intervalID;
 
-// Function to change the greeting message
 function changeGreeting() {
     const helloElement = document.querySelector("#hello h1");
-    const fadeDuration = 750; // Duration in milliseconds
+    const fadeDuration = 70; // Duration in milliseconds
 
     helloElement.classList.add('fade-out');
     setTimeout(() => {
@@ -30,13 +29,11 @@ function changeGreeting() {
     }, fadeDuration);
 }
 
-// Function to handle the home link click
 function handleHomeLinkClick(event) {
     event.preventDefault();
     window.location.href = 'index.html'; // Redirect to index.html
 }
 
-// Function to handle scroll direction for header visibility
 function handleScroll() {
     let lastScrollTop = 0;
     document.addEventListener('scroll', function() {
@@ -46,12 +43,11 @@ function handleScroll() {
     });
 }
 
-// Ensure scripts run on page load
 document.addEventListener('DOMContentLoaded', function() {
     const helloElement = document.querySelector("#hello h1");
     if (helloElement) {
         helloElement.classList.add('drop-in');
-        intervalID = setInterval(changeGreeting, 3000); // Change greeting every 3 seconds
+        intervalID = setInterval(changeGreeting, 75); // Change greeting every 75 milliseconds
     }
 
     const homeLink = document.getElementById('home-link');
@@ -82,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(document.querySelector('.seperator'));
     }
 
-    // Handle scroll event for progress bar
     document.addEventListener('scroll', () => {
         const docHeight = document.documentElement.scrollHeight;
         const winHeight = window.innerHeight;
@@ -92,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Function to create typewriter effect
 function typeWriter(element, text, delay = 100) {
     let index = 0;
     const interval = setInterval(() => {
@@ -105,7 +99,6 @@ function typeWriter(element, text, delay = 100) {
     }, delay);
 }
 
-// Function to create backspace effect
 function backspace(element, delay = 50) {
     const text = element.innerHTML;
     let index = text.length;
